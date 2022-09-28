@@ -1,0 +1,22 @@
+Script started on Wed Sep 28 00:00:20 2022
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air ~ % [K[?2004hccd desktop/cisc3140[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre/desktop/cisc3140[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air cisc3140 % [K[?2004hjjavac countdown.java[?2004l
+error: file not found: countdown.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre/desktop/cisc3140[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air cisc3140 % [K[?2004hjjaj  ccd lab1[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre/desktop/cisc3140/lab1[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air lab1 % [K[?2004hjjavac countdown.java[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre/desktop/cisc3140/lab1[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air lab1 % [K[?2004hjjava countdown.java[?2004l
+Now it is: Wed Sep 28 00:01:14 EDT 2022
+Lab 1 is due in less than 24 hours
+Lab 2 is due in 30 days on Fri Oct 28 15:30:00 EDT 2022
+Lab 3 is due in 56 days on Wed Nov 23 15:30:00 EST 2022
+Lab 4 is due in 70 days on Wed Dec 07 15:30:00 EST 2022
+[1m[7m%[27m[1m[0m                                                                                                                     ]7;file://Staynas-MacBook-Air.local/Users/staynaalexandre/desktop/cisc3140/lab1[0m[27m[24m[Jstaynaalexandre@Staynas-MacBook-Air lab1 % [K[?2004heeie exit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Wed Sep 28 00:01:22 2022

@@ -1,0 +1,6 @@
+1. Terminal on Mac Version 2.12.7
+2. git version 2.32.1 (Apple Git-133) /usr/bin/git
+3. NPM version 8.1.2 /usr/local/bin/npm
+   NodeJS version v16.13.2  /usr/local/bin/node
+4. Gitconfig version 2.37.3
+5. TextEdit Version 1.17
