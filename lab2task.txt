@@ -2,7 +2,7 @@ write a function that takes two dates and returns an integer that represents the
 of days between dates, so that the program outputs the number of days. [DONE]
 -----------
 allow user to select between available saved dates (assignment due dates, quiz dates, 
-and final dates) or enter their own date
+and final dates) or enter their own date [DONE]
 -----------
 when inputting a custom date, allow user input of the format MM/DD/YYYY 
 or MM-DD (defaulting to the next upcoming date. i.e. If you enter 01/01 it should default to 01/01/2023). 
