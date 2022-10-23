@@ -1,0 +1,18 @@
+write a function that takes two dates and returns an integer that represents the number 
+of days between dates, so that the program outputs the number of days. [DONE]
+-----------
+allow user to select between available saved dates (assignment due dates, quiz dates, 
+and final dates) or enter their own date
+-----------
+when inputting a custom date, allow user input of the format MM/DD/YYYY 
+or MM-DD (defaulting to the next upcoming date. i.e. If you enter 01/01 it should default to 01/01/2023). 
+When it’s not either of the formats it should provide an error message and accept the next input.
+-----------
+allow user to change today’s date, for example to allow simulating calculation of any two future dates 
+such as 12/21/2022 and 7/4/2025 
+-----------
+use a while loop to read in user input until there’s no input. Do not write code that opens files, 
+you will run your Java program using file redirection instead to mimic user input. 
+-----------
+write comments in your code such that a student from CISC 1115 can figure out where to update your 
+code so that your program can also allow input of type YYYY-MM-DD and/or print output to a text file.
