@@ -6,7 +6,7 @@ and final dates) or enter their own date [DONE]
 -----------
 when inputting a custom date, allow user input of the format MM/DD/YYYY 
 or MM-DD (defaulting to the next upcoming date. i.e. If you enter 01/01 it should default to 01/01/2023). 
-When it’s not either of the formats it should provide an error message and accept the next input.
+When it’s not either of the formats it should provide an error message and accept the next input. [DONE]
 -----------
 allow user to change today’s date, for example to allow simulating calculation of any two future dates 
 such as 12/21/2022 and 7/4/2025 

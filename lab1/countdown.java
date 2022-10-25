@@ -1,4 +1,4 @@
-//lab2 part 1.2
+//lab2 part 1.3
 import java.util.Calendar;
 import java.util.*;
 import java.util.Scanner;
@@ -7,34 +7,14 @@ public class countdown {
     Calendar cur;
     Calendar lab;
     Calendar day;
-
-    countdown() { // for current day
-        cur = Calendar.getInstance();
-    }
-
     countdown(int year, int month, int date, int hour, int min, int sec) { // for anyday
         cur = Calendar.getInstance();
         day = Calendar.getInstance();
         day.set(year, month, date, hour, min, sec);
     }
-/*
-    countdown(int year, int month, int date) { // for labs
-        cur = Calendar.getInstance();
-        lab = Calendar.getInstance();
-        lab.set(year, month, date, 15, 30, 00); // 3:30:00pm
-    }
-*/
-    public void setCur(){
-
-    }
-    public Calendar getCur() {
-        return cur;
-    }
-
     public int inBtw(Date current, Date due) { // difference between current date and due date
         return (int) ((due.getTime() - current.getTime()) / (1000 * 60 * 60 * 24)); // milliseconds in a day: 86400000
     }
-
     public String toString(String item) {
         int days = inBtw(cur.getTime(), day.getTime());
         if (days > 1)
@@ -46,7 +26,6 @@ public class countdown {
         else
             return item + " has passed. ";
     }
-
     // toString made for 1.1
     public String toString(Date d2) { // d2 is the future date
         Date first = day.getTime(); // store objects' date in two variables
@@ -56,7 +35,6 @@ public class countdown {
             return "There are " + days + " days between " + first + " and " + second;
         return "No days left between the two dates";
     }
-
     // Main
     public static void main(String args[]) {
         // inBtw function from lab1 already takes two dates and returns an int of the
@@ -68,9 +46,6 @@ public class countdown {
          * have to string call inbtw
          * reminder** months go from 0-11 instead of 1-12
          */
-        // countdown date1= new countdown(2023, 9, 30, 0, 0, 0); //10/30/22
-        // countdown date2= new countdown(2023, 5, 13, 0, 0, 0);
-        // System.out.println(date1.toString(date2));
         Calendar current = Calendar.getInstance(); // today
         //LABS
         countdown lab1 = new countdown(2022, 8, 28, 15, 30, 0); // lab 1 9/28
@@ -88,18 +63,26 @@ public class countdown {
         //Random date
         countdown date1;
         int mon, day, year;
+        String userDate;
+        int[] dateInt;
+        char[] dateChar;
 
         /* Plan 1.2
         ask user to choose A B C D or E
         change the first toString in the class to accept a string parameter instead
         only use one constuctor 
+
+        Plan 1.3
+        *if user chose D, let user know what format to enter the date
+        *it'll be taken in as an string and turned into a char array
+        *possibly use a for loop to loop through array till end, 
+        if next element !="/" or !="-" 
         */
 
         System.out.println("---------\nNow it is: " + current.getTime());
         System.out.println(
                 "Welcome to Countdown, this program calculates the difference between days.\nPick an option: ");
-        System.out
-                .println("A) Lab Dates\nB) Quiz Dates\nC) Final Exam Date\nD) Manually Enter Date\nType 'E' to exit.");
+        System.out.print("A) Lab Dates\nB) Quiz Dates\nC) Final Exam Date\nD) Manually Enter Date\nType 'E' to exit.\nYour Choice: ");
         Scanner input = new Scanner(System.in);
         char choice = input.next().charAt(0); // read in user input which is a character
         if (choice == 'A' || choice == 'a') { // Labs
@@ -116,19 +99,47 @@ public class countdown {
         } else if (choice == 'C' || choice == 'c') { // Final
             System.out.println(finalExam.toString("the Final"));
         } else if (choice == 'D' || choice == 'd') { // Own Date
-            System.out.println("Enter Month (ex 1 for Jan): ");
-            mon= input.nextInt() - 1;
-            System.out.println("Enter Day: ");
-            day= input.nextInt();
-            System.out.println("Enter Year: ");
-            year= input.nextInt();
+            System.out.println("Enter Date in either format\nMM/DD/YY\tMM/DD");
+            userDate=input.next();
+            //check format
+            while((!userDate.contains("/"))&& 
+            (userDate.length()!=8||userDate.length()!=4)){
+                System.out.println("ERROR, wrong format entered...\nTry again:\nMM/DD/YY\tMM/DD");
+                userDate=input.next();
+            }
+            dateChar=userDate.toCharArray(); //turn to character array
+
+            dateInt=giveDate(dateChar); //send to function that'll get the mon day and year
+            // DEBUG if (dateInt.length==3) System.out.println(dateInt[0]+",  "+dateInt[1]+ ", "+dateInt[2]);
+            mon= dateInt[0] - 1;
+            day= dateInt[1];
+            year= 2000+dateInt[2];
             date1= new countdown(year,mon,day,0,0,0);
             System.out.println("Date entered--> "+ date1.day.getTime());
             System.out.println(date1.toString(date1.cur.getTime()));
 
-        } else if (!(choice == 'E') || !(choice == 'e')) {
-            System.out.println("Goodbye");
-        }
+        } else if (!(choice == 'E') || !(choice == 'e')) System.out.println("Goodbye");
         input.close();
+    }
+    //array that will contain month date and year in seperate indexes 
+    public static int[] giveDate(char arr[]){
+        int a[]=new int[3];
+        int ind=0;
+        int res;
+        for(int i=0;i<arr.length;i++){
+            res=0;
+            if(arr[i]!='/'){
+                res=(res*10)+(arr[i]-'0');
+                res=res*10+(arr[i+1]-'0');
+                a[ind]= res;
+                i+=1;//skip the element we just stored in a[i+1], if at i=0, this will go to i=1
+                ind++;
+            }
+        }
+        if(arr.length!=8){
+            if(a[0]>=1&&a[0]<10) a[2]=23;
+            else a[2]=22;
+        }
+        return a;
     }
 }
