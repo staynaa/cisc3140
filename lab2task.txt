@@ -15,4 +15,4 @@ use a while loop to read in user input until there’s no input. Do not write co
 you will run your Java program using file redirection instead to mimic user input. [DONE]
 -----------
 write comments in your code such that a student from CISC 1115 can figure out where to update your 
-code so that your program can also allow input of type YYYY-MM-DD and/or print output to a text file.
+code so that your program can also allow input of type YYYY-MM-DD and/or print output to a text file.[DONE]

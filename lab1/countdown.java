@@ -1,10 +1,9 @@
-
-//lab2 part 1.5
+//lab2 part 1.6
 import java.util.Calendar;
 import java.util.*;
 import java.util.Scanner;
 
-public class countdown {
+public class countdown { 
     Calendar cur;
     Calendar day;
 
@@ -36,30 +35,21 @@ public class countdown {
 
     public String toString(String item) {
         int days = inBtw(cur.getTime(), day.getTime());
-        if (days > 1)
-            return "There are " + days + " days until " + item + " on --> " + day.getTime() + ".";
-        else if (days == 1)
-            return "One more day until " + item + " on --> " + day.getTime() + ".";
-        else if (days == 0)
-            return item + " will happen in less than 24 hours. ";
-        else
-            return item + " has passed. ";
+        if (days > 1) return "There are " + days + " days until " + item + " on --> " + day.getTime() + ".";
+        else if (days == 1) return "One more day until " + item + " on --> " + day.getTime() + ".";
+        else if (days == 0) return item + " will happen in less than 24 hours. ";
+        else return item + " has passed. ";
     }
-
     // toString made for 1.1
     public String toString(Date d2) { // d2 is the future date
         Date first = day.getTime(); // store objects' date in two variables
         Date second = d2;
         int days = inBtw(second, first);
-        if (days >= 0)
-            return "There are " + days + " days between " + first + " and " + second;
+        if (days >= 0) return "There are " + days + " days between " + first + " and " + second;
         return "No days left between the two dates";
     }
-
     // Main
     public static void main(String args[]) {
-        // inBtw function from lab1 already takes two dates and returns an int of the
-        // days between them
         /*
          * plan 1.1:
          * make two countdown objects
@@ -88,6 +78,15 @@ public class countdown {
         int[] dateInt;
         char[] dateChar;
         Scanner input = new Scanner(System.in);
+        /*comments for 1115 student: Here you can create a file and PrintWriter object:
+            File file= new File("<FileName>") 
+            PrintWriter out= new PrintWriter(file)
+            in the if statements/while loop instead of printing to console(System.out.print),
+            write to the out file using :
+            out.write(".......") 
+            this'll print the results you want onto file
+            in the end, close the writer with out.close() like how you close a scanner
+        */
 
         /*
          * Plan 1.2
