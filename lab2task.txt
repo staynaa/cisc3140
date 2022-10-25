@@ -9,7 +9,7 @@ or MM-DD (defaulting to the next upcoming date. i.e. If you enter 01/01 it shoul
 When it’s not either of the formats it should provide an error message and accept the next input. [DONE]
 -----------
 allow user to change today’s date, for example to allow simulating calculation of any two future dates 
-such as 12/21/2022 and 7/4/2025 
+such as 12/21/2022 and 7/4/2025 [DONE]
 -----------
 use a while loop to read in user input until there’s no input. Do not write code that opens files, 
 you will run your Java program using file redirection instead to mimic user input. 
