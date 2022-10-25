@@ -1,4 +1,5 @@
-//lab2 part 1.4
+
+//lab2 part 1.5
 import java.util.Calendar;
 import java.util.*;
 import java.util.Scanner;
@@ -24,6 +25,7 @@ public class countdown {
     public Calendar getCur() {
         return cur;
     }
+
     public void setDay(int year, int month, int date) {
         day.set(year, month, date, 0, 0, 0);
     }
@@ -80,7 +82,7 @@ public class countdown {
         // FINAL
         countdown finalExam = new countdown(2022, 11, 19, 13, 0, 0); // final 12/19
         // Random date
-        countdown date1=new countdown(2022, 1, 1, 0, 0, 0);
+        countdown date1 = new countdown(2022, 1, 1, 0, 0, 0);
         int mon, day, year;
         String userDate;
         int[] dateInt;
@@ -99,68 +101,78 @@ public class countdown {
          * possibly use a for loop to loop through array till end,
          * if next element !="/" or !="-"
          */
-        System.out.println("---------\nCurrent Day set to " + current.getTime()+ "\n---------\nWelcome to Countdown, this program calculates the difference between days.\nPick an option: ");
+        System.out.println("---------\nCurrent Day set to " + current.getTime()
+                + "\n---------\nWelcome to Countdown, this program calculates the difference between days.\nPick an option: ");
         System.out.print(
                 "Type '1' to change current date\nA) Lab Dates\nB) Quiz Dates\nC) Final Exam Date\nD) Manually Enter Date\nType 'E' to exit.\nYour Choice: ");
         char choice = input.next().charAt(0);
-        if (choice == '1') {
-            System.out.println("Month: ");
-            mon = input.nextInt() - 1;
-            System.out.println("Day: ");
-            day = input.nextInt();
-            System.out.println("Year: ");
-            year = input.nextInt();
+        while (choice != 'E' && choice != 'e') { // while loop to ask user until they exit
+            if (choice == '1') {
+                System.out.println("Month: ");
+                mon = input.nextInt() - 1;
+                System.out.println("Day: ");
+                day = input.nextInt();
+                System.out.println("Year: ");
+                year = input.nextInt();
 
-            lab1.setCur(mon, day, year);
-            lab2.setCur(mon, day, year);
-            lab3.setCur(mon, day, year);
-            lab4.setCur(mon, day, year);
-            quiz1.setCur(mon, day, year);
-            quiz2.setCur(mon, day, year);
-            quiz3.setCur(mon, day, year);
-            quiz4.setCur(mon, day, year);
-            quiz5.setCur(mon, day, year);
-            finalExam.setCur(mon, day, year);
-            date1.setCur(mon, day, year);
-            System.out.println("---------\nYou changed current Day to " + lab1.getCur().getTime());
-        }
-
-        if (choice == 'A' || choice == 'a') { // Labs
-            System.out.println(lab1.toString("Lab 1"));
-            System.out.println(lab2.toString("Lab 2"));
-            System.out.println(lab3.toString("Lab 3"));
-            System.out.println(lab4.toString("Lab 4"));
-        } else if (choice == 'B' || choice == 'b') { // Quiz
-            System.out.println(quiz1.toString("Quiz 1"));
-            System.out.println(quiz2.toString("Quiz 2"));
-            System.out.println(quiz3.toString("Quiz 3"));
-            System.out.println(quiz4.toString("Quiz 4"));
-            System.out.println(quiz5.toString("Quiz 5"));
-        } else if (choice == 'C' || choice == 'c') { // Final
-            System.out.println(finalExam.toString("the Final"));
-        } else if (choice == 'D' || choice == 'd') { // Own Date
-            System.out.println("Enter Date in either format\nMM/DD/YY\tMM/DD");
-            userDate = input.next();
-            // check format
-            while ((!userDate.contains("/")) &&
-                    (userDate.length() != 8 || userDate.length() != 4)) {
-                System.out.println("ERROR, wrong format entered...\nTry again:\nMM/DD/YY\tMM/DD");
-                userDate = input.next();
+                lab1.setCur(mon, day, year);
+                lab2.setCur(mon, day, year);
+                lab3.setCur(mon, day, year);
+                lab4.setCur(mon, day, year);
+                quiz1.setCur(mon, day, year);
+                quiz2.setCur(mon, day, year);
+                quiz3.setCur(mon, day, year);
+                quiz4.setCur(mon, day, year);
+                quiz5.setCur(mon, day, year);
+                finalExam.setCur(mon, day, year);
+                date1.setCur(mon, day, year);
+                System.out.println("---------\nYou changed current Day to " + lab1.getCur().getTime());
             }
-            dateChar = userDate.toCharArray(); // turn to character array
 
-            dateInt = giveDate(dateChar); // send to function that'll get the mon day and year
-            // DEBUG if (dateInt.length==3) System.out.println(dateInt[0]+", "+dateInt[1]+
-            // ", "+dateInt[2]);
-            mon = dateInt[0] - 1;
-            day = dateInt[1];
-            year = 2000 + dateInt[2];
-            date1.setDay(year, mon, day);
-            System.out.println("Date entered--> " + date1.getDay().getTime());
-            System.out.println(date1.toString(date1.cur.getTime()));
+            if (choice == 'A' || choice == 'a') { // Labs
+                System.out.println("---------");
+                System.out.println(lab1.toString("Lab 1"));
+                System.out.println(lab2.toString("Lab 2"));
+                System.out.println(lab3.toString("Lab 3"));
+                System.out.println(lab4.toString("Lab 4"));
+            } else if (choice == 'B' || choice == 'b') { // Quiz
+                System.out.println("---------");
+                System.out.println(quiz1.toString("Quiz 1"));
+                System.out.println(quiz2.toString("Quiz 2"));
+                System.out.println(quiz3.toString("Quiz 3"));
+                System.out.println(quiz4.toString("Quiz 4"));
+                System.out.println(quiz5.toString("Quiz 5"));
+            } else if (choice == 'C' || choice == 'c') { // Final
+                System.out.println("---------");
+                System.out.println(finalExam.toString("the Final"));
+            } else if (choice == 'D' || choice == 'd') { // Own Date
+                System.out.println("Enter Date in either format\nMM/DD/YY\tMM/DD");
+                userDate = input.next();
+                // check format
+                while ((!userDate.contains("/")) &&
+                        (userDate.length() != 8 || userDate.length() != 4)) {
+                    System.out.println("ERROR, wrong format entered...\nTry again:\nMM/DD/YY\tMM/DD");
+                    userDate = input.next();
+                }
+                dateChar = userDate.toCharArray(); // turn to character array
 
-        } else if ((choice == 'E') || (choice == 'e'))
-            System.out.println("Goodbye");
+                dateInt = giveDate(dateChar); // send to function that'll get the mon day and year
+                // DEBUG if (dateInt.length==3) System.out.println(dateInt[0]+", "+dateInt[1]+
+                // ", "+dateInt[2]);
+                mon = dateInt[0] - 1;
+                day = dateInt[1];
+                year = 2000 + dateInt[2];
+                date1.setDay(year, mon, day);
+                System.out.println("Date entered--> " + date1.getDay().getTime());
+                System.out.println("---------");
+                System.out.println(date1.toString(date1.cur.getTime()));
+
+            }
+            System.out.print(
+                    "---------\nType '1' to change current date\nA) Lab Dates\nB) Quiz Dates\nC) Final Exam Date\nD) Manually Enter Date\nType 'E' to exit.\nYour Choice: ");
+            choice = input.next().charAt(0);
+        }
+        System.out.println("---------\nYou have exited the program");
         input.close();
     }
 

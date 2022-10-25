@@ -12,7 +12,7 @@ allow user to change today’s date, for example to allow simulating calculation
 such as 12/21/2022 and 7/4/2025 [DONE]
 -----------
 use a while loop to read in user input until there’s no input. Do not write code that opens files, 
-you will run your Java program using file redirection instead to mimic user input. 
+you will run your Java program using file redirection instead to mimic user input. [DONE]
 -----------
 write comments in your code such that a student from CISC 1115 can figure out where to update your 
 code so that your program can also allow input of type YYYY-MM-DD and/or print output to a text file.
