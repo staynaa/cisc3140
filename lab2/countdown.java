@@ -60,7 +60,7 @@ public class countdown {
         Calendar current = Calendar.getInstance(); // today
         // LABS
         countdown lab1 = new countdown(2022, 8, 28, 15, 30, 0); // lab 1 9/28
-        countdown lab2 = new countdown(2022, 9, 28, 15, 30, 0); // lab 2 10/28
+        countdown lab2 = new countdown(2022, 9, 26, 15, 30, 0); // lab 2 10/26
         countdown lab3 = new countdown(2022, 10, 23, 15, 30, 0); // lab 3 11/23
         countdown lab4 = new countdown(2022, 11, 7, 15, 30, 0); // lab 4 12/7
         // QUIZ
@@ -68,7 +68,7 @@ public class countdown {
         countdown quiz2 = new countdown(2022, 8, 28, 14, 15, 0); // q2 9/28
         countdown quiz3 = new countdown(2022, 9, 26, 14, 15, 0); // q3 10/26
         countdown quiz4 = new countdown(2022, 10, 16, 14, 15, 0); // q4 11/16
-        countdown quiz5 = new countdown(2022, 11, 7, 2, 15, 0); // q5 12/7
+        countdown quiz5 = new countdown(2022, 11, 7, 14, 15, 0); // q5 12/7
         // FINAL
         countdown finalExam = new countdown(2022, 11, 19, 13, 0, 0); // final 12/19
         // Random date
